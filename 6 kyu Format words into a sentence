@@ -1,0 +1,35 @@
+using System;
+using System.Text;
+using System.Linq;
+
+public static class Kata
+{
+  public static string FormatWords(string[] words)
+  {
+    if(words==null)return "";
+    StringBuilder sb = new StringBuilder();
+    words = words.Where(x=>x!="").ToArray();
+    for(int i=0;i<words.Length;i++)
+      {
+      if(words.Length==1)return words[0];
+        if(i==words.Length-1&&words[i]!=null)
+          {
+            sb.Append("and ");
+            sb.Append(words[i]);
+          }
+        else if(words[i]!=null &&words[i]!="")
+          {
+          if(i==words.Length-2)
+          {
+            sb.Append($"{words[i]} ");
+          }
+          else
+          {
+            sb.Append(words[i]);
+            sb.Append(", ");
+          }
+          }
+      }
+    return sb.ToString();
+  }
+}
