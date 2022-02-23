@@ -1,0 +1,10 @@
+using System;
+using System.Linq;
+using System.Collections;
+public static class Kata
+{
+    public static long ReverseBits(long n)
+    {
+       return  Convert.ToInt64(string.Join("",Convert.ToString(n,2).Reverse()),2);
+    }
+}
