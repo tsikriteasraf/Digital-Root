@@ -1,0 +1,3 @@
+var maxRedigit = function(num) {
+  return num.toString().length!=3?null :parseInt(num.toString().split("").map(x=>parseInt(x)).sort((a,b)=>b-a).map(x=>x.toString()).join(""))
+};
