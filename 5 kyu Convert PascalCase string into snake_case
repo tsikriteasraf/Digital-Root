@@ -1,0 +1,85 @@
+
+using System.Text;
+using System;
+using System.Linq;
+
+public static class Kata 
+{
+  public static string ToUnderscore(int str) 
+  {
+    int counter=0;
+    string s=str.ToString();
+    StringBuilder sb = new StringBuilder();
+            foreach (var item in s)
+            {
+             
+                  if (char.IsLetter(item))
+                {
+                    if(char.IsUpper(item))
+                    {
+                      counter++;
+                      if(counter>1)
+                      {
+                         sb.Append("_");
+                         sb.Append(char.ToLower(item));
+                      }
+                      else
+                      {
+                        sb.Append(char.ToLower(item));
+                      }
+                       
+                    }
+                   else
+                     {
+                        sb.Append(item);
+                     }
+                }
+                 else
+                     {
+                        sb.Append(item);
+                     }
+              
+              
+                
+            }
+           return sb.ToString();
+  }
+
+  public static string ToUnderscore(string str) 
+  {
+    int counter=0;
+    string s=str.ToString();
+    StringBuilder sb = new StringBuilder();
+            foreach (var item in s)
+            {
+             
+                if (char.IsLetter(item))
+                {
+                    if(char.IsUpper(item))
+                    {
+                         counter++;
+                      if(counter>1)
+                      {
+                         sb.Append("_");
+                         sb.Append(char.ToLower(item));
+                      }
+                      else
+                      {
+                        sb.Append(char.ToLower(item));
+                      }
+                    }
+                   else
+                {
+                    sb.Append(item);
+                }
+                }
+                else
+                {
+                    sb.Append(item);
+                }
+              
+                
+            }
+           return sb.ToString();
+  }
+}
