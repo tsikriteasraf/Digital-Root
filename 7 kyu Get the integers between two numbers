@@ -1,0 +1,21 @@
+Description:
+Build a function that can get all the integers between two given numbers.
+
+Example:
+
+(2,9)
+
+Should give you this output back:
+
+[ 3, 4, 5, 6, 7, 8 ]
+
+If startNum is the same as endNum, return an empty array.
+
+using System.Linq;
+public class Kata
+{
+  public static int[] Range(int startNum, int endNum)
+  {
+    return startNum==endNum ? new int[0] : Enumerable.Range(startNum+1,endNum-startNum-1).ToArray();
+  }
+}
