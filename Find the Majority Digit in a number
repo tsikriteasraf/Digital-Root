@@ -1,0 +1,10 @@
+using System;
+using System.Linq;
+
+public class Kata
+{
+  public static bool IsMajority(long n) {
+   
+    return n.ToString().Distinct().Any(s=>n.ToString().Count(x=>x==s)>n.ToString().Length/2);
+  }
+}
